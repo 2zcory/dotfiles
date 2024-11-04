@@ -157,4 +157,4 @@ export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 #   tmux switch-client -t "$session_name"
 # fi
 
-source $HOME/.zscripts/*
+source ~/.config/shell/*
