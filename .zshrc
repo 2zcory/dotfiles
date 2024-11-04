@@ -107,54 +107,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# NVM Configuration
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-# place this after nvm initialization!
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
-      nvm use
-    fi
-  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
-
-# Read file custom
-source ~/.zsh/custom-zsh/.index.sh
-
 alias vim="nvim"
-export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
-# # tmux config
-# session_name="sesh"
+zwp=$HOME/wp
 
-# # 1. First you check if a tmux session exists with a given name.
-# tmux has-session -t=$session_name 2> /dev/null
-
-# # 2. Create the session if it doesn't exists.
-# if [[ $? -ne 0 ]]; then
-#   TMUX='' tmux new-session -d -s "$session_name"
-# fi
-
-# # 3. Attach if outside of tmux, switch if you're in tmux.
-# if [[ -z "$TMUX" ]]; then
-#   tmux attach -t "$session_name"
-# else
-#   tmux switch-client -t "$session_name"
-# fi
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  source $zwp/dotfiles/.zshrc.linux
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  source $zwp/dotfiles/.zshrc.darwin
+fi
 
 source ~/.config/shell/*

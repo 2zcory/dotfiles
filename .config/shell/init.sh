@@ -1,7 +1,5 @@
 sshconfig=$HOME/.ssh/config
 
-zwp=$HOME/wp
-
 if [ ! -d $zwp ]; then
   echo 'Created workspace folder with path ' $zwp
   mkdir $zwp
