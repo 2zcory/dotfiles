@@ -1,5 +1,11 @@
 sshconfig=$HOME/.ssh/config
 
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  source $zwp_zsh_custom/.os.linux.zsh
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  source $zwp_zsh_custom/.os.darwin.zsh
+fi
+
 if [ ! -d $zwp ]; then
   echo 'Created workspace folder with path ' $zwp
   mkdir $zwp

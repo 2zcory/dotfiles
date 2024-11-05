@@ -3,12 +3,16 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export zwp=$HOME/wp
+export zwp_p10k=$zwp/dotfiles/p10k
+export zwp_zsh_custom=$zwp/dotfiles/.zsh/izyroc
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  source $zwp_zsh_custom/.zsh-theme.linux
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  source $zwp_zsh_custom/.zsh-theme.darwin
+fi
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -109,12 +113,4 @@ source $ZSH/oh-my-zsh.sh
 
 alias vim="nvim"
 
-zwp=$HOME/wp
-
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  source $zwp/dotfiles/.zshrc.linux
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-  source $zwp/dotfiles/.zshrc.darwin
-fi
-
-source ~/.config/shell/*
+source $zwp/dotfiles/.zsh/izyroc/index.zsh
