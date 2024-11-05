@@ -3,6 +3,15 @@
 -- Add any additional keymaps here
 
 local map = vim.keymap.set
-local opts = { noremap = true, silent = true }
 
 -- Tab
+
+-- cmd
+map("n", ";", ":", { desc = "CMD enter command mode" })
+
+-- Windows
+map("n", "<leader>\\", "<cmd>vsplit<CR>", { desc = "Windows - split window right" })
+
+-- Telescope
+map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "Telescope Live Grep - Search Words in Workspace" })
+
