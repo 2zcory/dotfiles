@@ -7,7 +7,10 @@ export zwp=$HOME/wp
 export zwp_p10k=$zwp/dotfiles/p10k
 export zwp_zsh_custom=$zwp/dotfiles/.zsh/izyroc
 
-
+if [[ ! -e ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k ]]; then
+  echo "Installing Powerlevek10k"
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+fi
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
