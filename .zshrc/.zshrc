@@ -5,7 +5,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 export zwp=$HOME/wp
 export zwp_p10k=$zwp/dotfiles/p10k
-export zwp_zsh_custom=$zwp/dotfiles/.zsh/izyroc
+export zwp_zsh_custom=$zwp/dotfiles/.zshrc/custom
 
 if [[ ! -e ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k ]]; then
   echo "Installing Powerlevek10k"
@@ -119,4 +119,4 @@ source $ZSH/oh-my-zsh.sh
 
 alias vim="nvim"
 
-source $zwp/dotfiles/.zsh/izyroc/index.zsh
+source $zwp_zsh_custom/index.zsh
