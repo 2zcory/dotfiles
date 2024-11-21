@@ -1,6 +1,6 @@
 sshconfig=$HOME/.ssh/config
 
-zlibgas=$zwp/lib/@gas
+zlibgas=$zwp/lib/@izgas
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   source $zwp_zsh_custom/.os.linux.zsh
@@ -44,7 +44,6 @@ zlibgas() {
   else
     echo "Invalid argument passed!"
   fi
-
 }
 
 compctl -W $zlibgas -/ zlibgas
