@@ -8,8 +8,11 @@ return {
       -- Define your formatters
       formatters_by_ft = {
         lua = { "stylua" },
+
         typescript = { "prettier", stop_after_first = true },
         javascript = { "prettier", stop_after_first = true },
+
+        zsh = { "shfmt" },
       },
       -- Set default options
       default_format_opts = {

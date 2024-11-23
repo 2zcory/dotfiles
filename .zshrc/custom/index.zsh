@@ -47,3 +47,8 @@ zlibgas() {
 }
 
 compctl -W $zlibgas -/ zlibgas
+
+# Custom git command
+if git rev-parse --is-inside-work-tree &>/dev/null; then
+  source $zwp_zsh_custom_common/git.zsh
+fi

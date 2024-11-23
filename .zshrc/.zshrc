@@ -4,8 +4,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export zwp=$HOME/wp
-export zwp_p10k=$zwp/dotfiles/p10k
 export zwp_zsh_custom=$zwp/dotfiles/.zshrc/custom
+
+source $zwp_zsh_custom/variables.zsh
 
 if [[ ! -e ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k ]]; then
   echo "Installing Powerlevek10k"
