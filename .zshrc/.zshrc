@@ -121,3 +121,11 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 
 source $zwp_zsh_custom/index.zsh
+
+# pnpm
+export PNPM_HOME="/Users/trinkdiprovn/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
