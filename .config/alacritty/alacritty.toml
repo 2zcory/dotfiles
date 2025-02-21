@@ -1,0 +1,25 @@
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding = { x = 10, y = 10 }
+opacity = 0.9
+decorations = "none"
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+size = 14.0
+
+[cursor]
+style = { shape = "Block", blinking = "Always" }
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[keyboard]
+bindings = [
+  { key = "Return", mods = "Control|Shift", action = "SpawnNewInstance" },
+  { key = "F11", action = "ToggleFullscreen" }
+]

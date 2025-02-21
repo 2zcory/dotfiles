@@ -62,7 +62,6 @@ return {
         adapters = {
           type = "server",
           host = "127.0.0.1",
-          port = 9229,
         },
       })
 
@@ -81,7 +80,6 @@ return {
             "${workspaceFolder}/**",
             "!**/node_modules/**",
           },
-          port = 9229,
         },
         {
           type = "pwa-node",
@@ -89,7 +87,6 @@ return {
           name = "Attach to Node Process",
           processId = require("dap.utils").pick_process,
           cwd = vim.fn.getcwd(),
-          port = 9229,
         },
       }
 
