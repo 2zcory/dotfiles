@@ -25,8 +25,8 @@ draw_bold_text_with_bright_colors = true
 
 [keyboard]
 bindings = [
-  { key = "Return", mods = "Control|Shift", action = "SpawnNewInstance" },
-  { key = "F11", action = "ToggleFullscreen" }
+  { key = "F11", action = "ToggleFullscreen" },
+  { key = "Return", mods = "Super", action = "ToggleFullscreen"}
 ]
 
 [selection]
