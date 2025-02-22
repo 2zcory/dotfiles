@@ -24,7 +24,4 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-# Read file custom
-source ~/.zsh/custom-zsh/.index.sh
-
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"

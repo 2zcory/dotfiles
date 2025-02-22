@@ -33,13 +33,6 @@ if [ ! -d $iztypes ]; then
   mkdir -p $iztypes
 fi
 
-# if [ ! -z "$(ls -A $zwp)" ]; then
-#   for d in $zwp/*/; do
-#     dname=$(basename $d)
-#     declare zwp_$dname=$zwp/$dname
-#   done
-# fi
-
 zwp() {
   if [[ -d $zwp/$1 && ! -z $1 ]]; then
     cd $zwp/$1

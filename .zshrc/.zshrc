@@ -19,14 +19,13 @@ if [[ ! -e ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k ]]; then
   echo "Installing Powerlevek10k"
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 fi
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+
 export ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f $zwp_p10k/.p10k.zsh ]] || source $zwp_p10k/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit ~/wp/dotfiles/p10k/.p10k.zsh.
+[[ ! -f ~/wp/dotfiles/p10k/.p10k.zsh ]] || source ~/wp/dotfiles/p10k/.p10k.zsh
+
+alias vim="nvim"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -125,8 +124,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias vim="nvim"
-
 source $zwp_zsh_custom/index.zsh
 
 # pnpm
@@ -139,5 +136,7 @@ esac
 
 export TERM="xterm-256color"
 
-# To customize prompt, run `p10k configure` or edit ~/wp/dotfiles/p10k/.p10k.zsh.
-[[ ! -f ~/wp/dotfiles/p10k/.p10k.zsh ]] || source ~/wp/dotfiles/p10k/.p10k.zsh
+# TMUX: If a main session is already running, Alacritty will automatically attach to it.
+# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+#  exec tmux new-session -A -s main
+# fi
