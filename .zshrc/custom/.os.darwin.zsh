@@ -1,7 +1,7 @@
 # NVM Configuration
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"                                       # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
 # place this after nvm initialization!
 autoload -U add-zsh-hook
@@ -25,3 +25,11 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+
+if command -v sops &>/dev/null; then
+  CONFIG_FILE="$HOME/.secrets.json.enc"
+
+  if [ -f "$CONFIG_FILE" ]; then
+    eval "$(sops --decrypt --output-type json "$CONFIG_FILE" | jq -r 'to_entries|map("export \(.key)=\(.value)")|.[]')"
+  fi
+fi

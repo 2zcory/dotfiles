@@ -36,7 +36,7 @@ fi
 zwp() {
   if [[ -d $zwp/$1 && ! -z $1 ]]; then
     cd $zwp/$1
-    vim
+    zsh -i -c "nvim"
   else
     echo "Invalid argument passed!"
   fi

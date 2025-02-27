@@ -3,6 +3,7 @@
 -- Add any additional options here
 vim.opt.termguicolors = true
 vim.g.lazyvim_check_order = false
+vim.env.OPENAI_API_KEY = os.getenv("CHAT_GPT_NVIM")
 vim.filetype.add({
   extension = {
     zsh = "zsh",
