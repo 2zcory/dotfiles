@@ -25,11 +25,3 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
-
-if command -v sops &>/dev/null; then
-  CONFIG_FILE="$HOME/.secrets.json.enc"
-
-  if [ -f "$CONFIG_FILE" ]; then
-    eval "$(sops --decrypt --output-type json "$CONFIG_FILE" | jq -r 'to_entries|map("export \(.key)=\(.value)")|.[]')"
-  fi
-fi
