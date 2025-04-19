@@ -48,4 +48,36 @@ return {
       })
     end,
   },
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = {
+      current_line_blame = true, -- bật blame trực tiếp
+      current_line_blame_opts = {
+        delay = 200, -- độ trễ (ms)
+        virt_text_pos = "eol", -- vị trí: 'eol', 'overlay', hoặc 'right_align'
+      },
+      current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d> - <summary>",
+    },
+  },
+  {
+    "kdheepak/lazygit.nvim",
+    lazy = true,
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    -- optional for floating window border decoration
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    -- setting the keybinding for LazyGit with 'keys' is recommended in
+    -- order to load the plugin when the command is run for the first time
+    keys = {
+      { "<leader>gl", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+      { "<leader>gf", "<cmd>LazyGitFilterCurrentFile<cr>", desc = "LazyGit: file history" },
+    },
+  },
 }
