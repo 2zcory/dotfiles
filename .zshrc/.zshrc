@@ -7,6 +7,10 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+zwp=$HOME/wp
+zwp_zsh_custom=$zwp/dotfiles/.zshrc/custom
+
 source $zwp_zsh_custom/1.variables.zsh
 
 

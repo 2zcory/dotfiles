@@ -3,10 +3,12 @@ TERM = "xterm-256color"
 WINIT_HIDPI_FACTOR = "1.0"
 
 [window]
-dimensions = { columns = 120, lines = 35 }
-padding = { x = 5, y = 5 }
+title = "Dipro Tech"
+startup_mode = "Maximized"
+blur = true
+padding = { x = 8, y = 24 }
 opacity = 0.85
-decorations = "none"
+decorations = "None"
 
 [scrolling]
 history = 100000
@@ -16,13 +18,14 @@ multiplier = 5
 normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
 bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
 italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
-size = 13.0
+size = 14.0
 
 [cursor]
 style = { shape = "Block", blinking = "Always" }
 
 [colors]
 draw_bold_text_with_bright_colors = true
+transparent_background_colors = true
 
 [keyboard]
 bindings = [

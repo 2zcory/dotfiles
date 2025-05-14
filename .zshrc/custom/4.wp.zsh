@@ -34,7 +34,6 @@ zwp() {
   if [[ -n $1 && -d $dir ]]; then
     cd $zwp/$1 || return
     command -v vim >/dev/null && vim || echo "🧩 vim not found"
-    zsh -i -c "nvim"
   else
     echo "Invalid argument passed!"
   fi
