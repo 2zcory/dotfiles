@@ -8,11 +8,6 @@ elif [[ "$OSTYPE" == "linux-android"* ]]; then
   source $zwp_zsh_custom/.os.android.zsh
 fi
 
-# Custom git command
-if git rev-parse --is-inside-work-tree &>/dev/null; then
-  source $zwp_zsh_custom_common/git.zsh
-fi
-
 if [ ! -d $zwp ]; then
   echo 'Created workspace folder with path ' $zwp
   mkdir $zwp
@@ -33,9 +28,12 @@ if [ ! -d $iztypes ]; then
   mkdir -p $iztypes
 fi
 
+# -n = non-empty
 zwp() {
-  if [[ -d $zwp/$1 && ! -z $1 ]]; then
-    cd $zwp/$1
+  local dir="$zwp/$1"
+  if [[ -n $1 && -d $dir ]]; then
+    cd $zwp/$1 || return
+    command -v vim >/dev/null && vim || echo "🧩 vim not found"
     zsh -i -c "nvim"
   else
     echo "Invalid argument passed!"

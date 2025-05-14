@@ -7,11 +7,8 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-export zwp=$HOME/wp
-export zwp_zsh_custom=$zwp/dotfiles/.zshrc/custom
+source $zwp_zsh_custom/1.variables.zsh
 
-source $zwp_zsh_custom/variables.zsh
 
 # 🎨 Install Powerlevel10k theme if needed
 if [[ ! -e ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k ]]; then
@@ -42,8 +39,9 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-source $zwp_zsh_custom/1.alias.zsh
-source $zwp_zsh_custom/index.zsh
+source $zwp_zsh_custom/2.alias.zsh
+source $zwp_zsh_custom/3.functions.zsh
+source $zwp_zsh_custom/4.wp.zsh
 
 source $ZSH/oh-my-zsh.sh
 
