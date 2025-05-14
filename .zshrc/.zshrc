@@ -34,10 +34,6 @@ plugins=(
   zsh-npm-scripts-autocomplete
 )
 
-source $zwp_zsh_custom/1.alias.zsh
-source $zwp_zsh_custom/index.zsh
-source $ZSH/oh-my-zsh.sh
-
 # pnpm
 export PNPM_HOME="/Users/trinkdiprovn/Library/pnpm"
 case ":$PATH:" in
@@ -46,9 +42,9 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-export TERM="xterm-256color"
+source $zwp_zsh_custom/1.alias.zsh
+source $zwp_zsh_custom/index.zsh
 
-# TMUX: If a main session is already running, Alacritty will automatically attach to it.
-# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-#  exec tmux new-session -A -s main
-# fi
+source $ZSH/oh-my-zsh.sh
+
+export TERM="xterm-256color"
