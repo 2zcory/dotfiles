@@ -15,9 +15,9 @@ return {
         zsh = { "shfmt" },
         sh = { "shfmt" },
         
-        php = { "pint" },
+        php = { "pint", "php_cs_fixer" },
         -- blade = { "blade-formatter", "rustywind" },
-        blade = { "rustywind" },
+        blade = { "blade-formatter", "rustywind" },
       })
 
       return opts
