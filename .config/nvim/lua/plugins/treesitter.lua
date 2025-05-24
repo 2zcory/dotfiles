@@ -20,7 +20,13 @@ return {
         "typescript",
         "vim",
         "yaml",
+        "php",
+        "blade",
       },
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      }
     },
   },
 
@@ -31,10 +37,10 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
       -- add tsx and treesitter
-      vim.list_extend(opts.ensure_installed, {
-        "tsx",
-        "typescript",
-      })
+      -- vim.list_extend(opts.ensure_installed, {
+      --   "tsx",
+      --   "typescript",
+      -- })
     end,
   },
 }

@@ -50,3 +50,4 @@ source $zwp_zsh_custom/4.wp.zsh
 source $ZSH/oh-my-zsh.sh
 
 export TERM="xterm-256color"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
