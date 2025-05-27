@@ -13,9 +13,8 @@ return {
             }
           },
           keys = {
-            { "gd", false },
-            { "gr", false },
             { "gl", false },
+            { "gk", false },
           }
         }
       }
@@ -104,8 +103,8 @@ return {
       vim.api.nvim_create_autocmd("FileType", {
         pattern = { "blade" },
         callback = function()
-          vim.keymap.set("n", "gd", go_to_blade_view, { buffer = true, desc = "Go to included Blade file" })
-          vim.keymap.set("n", "gl", go_to_route, { buffer = true, desc = "Go to route definition" })
+          vim.keymap.set("n", "gl", go_to_blade_view, { buffer = true, desc = "Go to included Blade file" })
+          vim.keymap.set("n", "gk", go_to_route, { buffer = true, desc = "Go to route definition" })
         end,
       })
     end,
