@@ -6,9 +6,9 @@ WINIT_HIDPI_FACTOR = "1.0"
 [window]
 title = "Dipro Tech"
 startup_mode = "Maximized"
-blur = true
+blur = false
 padding = { x = 8, y = 24 }
-opacity = 0.85
+opacity = 0.45
 decorations = "Buttonless"
 option_as_alt = "Both"
 
@@ -28,6 +28,12 @@ style = { shape = "Block", blinking = "Always" }
 [colors]
 draw_bold_text_with_bright_colors = true
 transparent_background_colors = true
+
+[colors.primary]
+background = "#2E2E30"
+
+[colors.normal]
+black = "#2E2E30"
 
 [keyboard]
 bindings = [
