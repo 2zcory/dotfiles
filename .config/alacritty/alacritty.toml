@@ -5,10 +5,10 @@ WINIT_HIDPI_FACTOR = "1.0"
 
 [window]
 title = "Dipro Tech"
-startup_mode = "Maximized"
+dimensions = { columns = 192, lines = 48 }
 blur = false
 padding = { x = 8, y = 24 }
-opacity = 0.45
+opacity = 0.65
 decorations = "Buttonless"
 option_as_alt = "Both"
 
@@ -38,7 +38,8 @@ black = "#2E2E30"
 [keyboard]
 bindings = [
   { key = "Return", mods = "Super", action = "ToggleFullscreen"},
-  { key = "T", mods = "Control|Shift", action = "SpawnNewInstance" },
+  { key = "T", mods = "Control|Shift", action = "CreateNewTab" },
+  { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
   { key = "K", mods = "Control", chars = "\u0002k" },
   { key = "J", mods = "Control", chars = "\u0002j" },
   { key = "H", mods = "Control", chars = "\u0002h" },
