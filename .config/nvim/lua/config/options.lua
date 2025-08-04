@@ -4,6 +4,7 @@
 vim.opt.termguicolors = true
 
 vim.g.lazyvim_check_order = false
+vim.g.autoformat = false
 
 vim.filetype.add({
   extension = {

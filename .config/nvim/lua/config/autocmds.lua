@@ -3,9 +3,8 @@
 -- Add any additional autocmds here
 -- Disable autoformat for lua files
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "css", "blade.php" },
+  pattern = { "css", "blade.php", "js" },
   callback = function()
     vim.b.autoformat = false
   end,
 })
-

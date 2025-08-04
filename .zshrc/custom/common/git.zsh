@@ -12,6 +12,16 @@ function gcnp() {
   git push
 }
 
+function ncnp() {
+  local current_dir="$(pwd)"
+
+  cd $zwp/z_notes
+
+  gcnp
+
+  cd $current_dir
+}
+
 function git_push_force_trigger() {
   local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
 
