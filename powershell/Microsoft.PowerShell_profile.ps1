@@ -10,4 +10,4 @@ Import-Module PSReadLine
 Set-PSReadLineOption -EditMode Emacs
 
 # init oh-my-posh
-oh-my-posh init pwsh | Invoke-Expression
+oh-my-posh init pwsh --config '~/the-unnamed.omp.json' | Invoke-Expression
