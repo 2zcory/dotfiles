@@ -11,9 +11,10 @@ export ZSH="$HOME/.oh-my-zsh"
 zwp=$HOME/wp
 zwp_zsh_custom=$zwp/dotfiles/.zshrc/custom
 
+# 1. Load variables (including OS detection)
 source $zwp_zsh_custom/1.variables.zsh
 
-
+# 2. Oh-My-Zsh Configuration & Plugins
 # 🎨 Install Powerlevel10k theme if needed
 if [[ ! -e ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k ]]; then
   echo "Installing Powerlevek10k"
@@ -35,6 +36,17 @@ plugins=(
   zsh-npm-scripts-autocomplete
 )
 
+# 3. Load Oh-My-Zsh Core (Sourced before custom configs)
+source $ZSH/oh-my-zsh.sh
+
+# 4. Load Custom Configurations (Can override Oh-My-Zsh settings)
+source $zwp_zsh_custom/2.alias.zsh
+source $zwp_zsh_custom/3.functions.zsh
+source $zwp_zsh_custom/4.wp.zsh
+
+# Load git safety wrapper unconditionally
+source $zwp_zsh_custom_common/git.zsh
+
 # pnpm
 export PNPM_HOME="/Users/trinkdiprovn/Library/pnpm"
 case ":$PATH:" in
@@ -42,14 +54,3 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-source $zwp_zsh_custom/2.alias.zsh
-source $zwp_zsh_custom/3.functions.zsh
-source $zwp_zsh_custom/4.wp.zsh
-
-source $ZSH/oh-my-zsh.sh
-
-export TERM="xterm-256color"
-export PATH="$HOME/.composer/vendor/bin:$PATH"
-
-. "$HOME/.local/bin/env"

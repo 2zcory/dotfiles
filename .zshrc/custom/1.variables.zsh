@@ -9,3 +9,12 @@ izgas=$zwp/lib/@izgas
 izutils=$zwp/lib/@izutils
 
 iztypes=$zwp/lib/@iztypes
+
+# 💻 Detect and load OS-specific configuration
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  source $zwp_zsh_custom/.os.linux.zsh
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  source $zwp_zsh_custom/.os.darwin.zsh
+elif [[ "$OSTYPE" == "linux-android"* ]]; then
+  source $zwp_zsh_custom/.os.android.zsh
+fi
