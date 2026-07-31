@@ -6,6 +6,12 @@ vim.opt.termguicolors = true
 vim.g.lazyvim_check_order = false
 vim.g.autoformat = false
 
+-- Bật tính năng xuống hàng (wrap)
+vim.opt.wrap = true
+
+-- Xuống hàng thông minh, không bị cắt từ
+vim.opt.linebreak = true
+
 vim.filetype.add({
   extension = {
     zsh = "zsh",
